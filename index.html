@@ -11,34 +11,34 @@
     <link rel="stylesheet" href="index.css">
     <title>PlatziConf Hawaii</title>
   </head>
-  <body data-spy="scroll" data-target="#navbar" data-offset="57">
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="57">
     <!-- Header -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="./assets/images/platzi-logo.png" alt="logo platzi">
           Conf Hawaii
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">La conferencia</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#main">La conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los oradores</a>
+              <a class="nav-link" href="#speakers">Los oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">El lugar y la fecha</a>
+              <a class="nav-link " href="#place-time">El lugar y la fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Conviértete en orador</a>
+              <a class="nav-link " href="#conviertete-en-orador">Conviértete en orador</a>
             </li>
             <li class="nav-item text-platzi">
-              <a class="nav-link " href="#">Comprar tickets</a>
+              <a class="nav-link text-platzi" href="#" data-bs-toggle="modal" data-bs-target="#modalCompra">Comprar tickets</a>
             </li>
           </ul>
         </div>
@@ -69,7 +69,7 @@
                 Ven a conocer amiembros del Team Platzi, a otros esudiantes y a los oradores de primer nivel que tenemos para ti. Te esperamos
                 </p>
                 <a href="#" class="btn btn-outline-light">Quiero ser un orador</a>
-                <button type="button" class="btn btn-platzi">Comprar tickets</button>
+                <button type="button" class="btn btn-platzi" data-bs-toggle="modal" data-bs-target="#modalCompra">Comprar tickets</button>
               </div>
             </div>
           </div>
@@ -158,9 +158,52 @@
         </div>
       </div>
     </section>
-    <!-- Fecha y lugar -->
-    <!-- /Conviértete en orador -->
-
+    <!-- Fecha y lugar -->    
+    <!-- Convierte en un orador -->
+    <section id="conviertete-en-orador" class="pt-3 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col text-uppercase text-center">
+            <small>Conviértete en un</small>
+            <h2>ORADOR</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            Anótate como orador para dar una <abbr title="charlas de 5 minutos" data-bs-toggle="tooltip"><strong>charla ignite</strong></abbr>.
+            Cuéntanos de que quieres hablar.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2">
+            <form>
+              <div class="row">
+                <div class="form-group col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Apellido">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-group col">
+                  <textarea name="text" class="form-control form-control-lg" placeholder="Sobre que quieres hablar?"></textarea>
+                  <small class="form-text text-muted">Recuerda poner un titulo para tu charla</small>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div type="button" class="btn btn-platzi btn-block">
+                      enviar
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Convierte en un orador -->
     <!-- Footer -->
     <footer id="footer" class="pb-4 pt-4">
       <div class="container">
@@ -190,9 +233,24 @@
       </div>
     </footer>
     <!-- /Footer -->
-
     <!-- Modal -->
-    
+    <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- /Modal -->
 
     <!-- Optional JavaScript -->
